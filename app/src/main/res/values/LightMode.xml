@@ -4,7 +4,7 @@
     <style name="LightMode" parent="Theme.Material3.Light.NoActionBar">
 
         <item name="colorPrimary">@color/black</item>
-        
+
     </style>
 
 </resources>
