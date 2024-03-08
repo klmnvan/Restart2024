@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    //Частично взято из supabase, но проще запомнить
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
 
 android {
@@ -33,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,5 +50,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //будет пределагать преобразовать в версию, как у бибилотек выше, не работает, не трогай
+    //noinspection UseTomlInstead
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    //для supabase
+    //noinspection UseTomlInstead
+    implementation(platform("io.github.jan-tennert.supabase:bom:2.0.4"))
+    //noinspection UseTomlInstead
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    //noinspection UseTomlInstead
+    implementation("io.ktor:ktor-client-android:2.3.7")
+
 
 }
