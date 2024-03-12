@@ -60,7 +60,6 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("io.github.jan-tennert.supabase:postgrest-kt")
     //noinspection UseTomlInstead
-    implementation("io.ktor:ktor-client-android:2.3.7")
-
+    implementation("io.ktor:ktor-client-android:2.3.9")
 
 }

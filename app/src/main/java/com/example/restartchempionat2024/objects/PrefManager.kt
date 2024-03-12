@@ -22,13 +22,21 @@ object PrefManager {
         get() = spActSystem.getInt("indAct", 0)
         set(value) = spActSystem.edit().putInt("indAct", value).apply()
 
-    var email: String
+    var queueString: String
+        get() = spActSystem.getString("queue", "")!!
+        set(value) = spActSystem.edit().putString("queue", value).apply()
+
+    var queueIsCreate: Boolean
+        get() = spActSystem.getBoolean("queue", false)
+        set(value) = spActSystem.edit().putBoolean("queue", value).apply()
+
+    /*var email: String
         get() = spProfiles.getString("email", "")!!
         set(value) = spProfiles.edit().putString("email", value).apply()
 
     var password: String
         get() = spProfiles.getString("password", "")!!
-        set(value) = spProfiles.edit().putString("password", value).apply()
+        set(value) = spProfiles.edit().putString("password", value).apply()*/
 
     var isLightTheme: Boolean
         get() = spProfiles.getBoolean("password", true)
