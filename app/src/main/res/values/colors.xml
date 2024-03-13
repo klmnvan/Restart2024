@@ -5,4 +5,5 @@
     <color name="blue">#0560FA</color>
     <color name="gray1">#A7A7A7</color>
     <color name="dark_background">#000D1D</color>
+    <color name="container_dark_theme">#001B3B</color>
 </resources>

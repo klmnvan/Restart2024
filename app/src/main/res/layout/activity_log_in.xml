@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.LogIn"
+    android:background="?attr/colorOnBackground"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tTittle"
+        style="@style/TextTittleBlack24"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Welcome Back"/>
+
+    <TextView
+        android:id="@+id/tDescription"
+        style="@style/TextDescriptionGray14"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tTittle"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentStart="true"
+        android:text="Fill in your email and password to continue"/>
+
+    <TextView
+        android:id="@+id/tHintEmail"
+        style="@style/TextDescriptionGray14"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tDescription"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentStart="true"
+        android:text="Email Address"/>
+
+    <EditText
+        android:id="@+id/inptEmail"
+        style="@style/TextFieldStandart"
+        android:layout_marginTop="5dp"
+        android:hint="***********@mail.com"
+        android:layout_below="@id/tHintEmail"
+        android:layout_alignParentStart="true"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tHintPassword"
+        style="@style/TextDescriptionGray14"
+        android:layout_width="match_parent"
+        android:layout_below="@id/inptEmail"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentStart="true"
+        android:text="Password"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:hintEnabled="false"
+        app:endIconMode="password_toggle"
+        app:endIconTint="?attr/colorOnPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tHintPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inptPassword"
+            style="@style/TextFieldStandart"
+            android:inputType="textPassword"
+            android:hint="***********@mail.com"
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/LLRememberPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/contPassword">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remember password"
+            android:textColor="?attr/colorOnSurface"
+            android:buttonTint="?attr/colorOnSurface"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/bForgotPass"
+            style="@style/TextSmallBlue14"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:text="Forgot Password?"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnLogIn"
+        style="@style/BtnBlue"
+        android:layout_marginTop="150dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="20dp"
+        android:text="Log In"
+        android:backgroundTint="?attr/colorOnSurface"
+        tools:ignore="HardcodedText"
+        android:layout_below="@id/LLRememberPass" />
+
+    <LinearLayout
+        android:id="@+id/LLHints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@id/btnLogIn"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextSmallGray14"
+            android:text="Already have an account? "
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/btnSignUp"
+            style="@style/TextSmallBlue14"
+            android:textStyle="bold"
+            android:text="Sing Up"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLHints2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@id/LLHints"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextSmallGray14"
+            android:text="or sign in using"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_google"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</RelativeLayout>
