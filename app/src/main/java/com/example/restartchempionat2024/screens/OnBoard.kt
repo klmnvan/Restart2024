@@ -35,8 +35,8 @@ class OnBoard : AppCompatActivity(), AnimationListener {
         }
         /* сразу извлекаем из очереди объект и отрисовываем его */
         enterOnBoard(queue.poll()!!)
-        pressingButton()
         initAnimation()
+        pressingButton()
     }
 
     /** Функция, где инициализируется анимация */

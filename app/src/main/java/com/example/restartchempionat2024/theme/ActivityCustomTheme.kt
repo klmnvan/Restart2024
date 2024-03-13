@@ -14,9 +14,7 @@ open class ActivityCustomTheme : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         PrefManager.init(this@ActivityCustomTheme)
-        if(PrefManager.isLightTheme){
-            UserData.theme = R.style.LightMode
-        } else {
+        if(!PrefManager.isLightTheme){
             UserData.theme = R.style.DarkMode
         }
         //получаем значение из Shared Pref в UserData

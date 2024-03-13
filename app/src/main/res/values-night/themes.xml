@@ -2,7 +2,10 @@
 
     <style name="Theme.RestartChempionat2024" parent="Theme.Material3.DayNight.NoActionBar">
 
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnSurface">@color/gray1</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnBackground">@color/dark_background</item>
 
     </style>
 

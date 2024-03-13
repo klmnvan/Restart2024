@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_alignParentEnd="true"
             android:text="Sing Up"
-            android:visibility="gone"
+            android:visibility="invisible"
             tools:ignore="HardcodedText" />
 
     </RelativeLayout>
@@ -87,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:visibility="invisible"
         android:layout_below="@id/RLButtons"
         android:orientation="horizontal">
 
