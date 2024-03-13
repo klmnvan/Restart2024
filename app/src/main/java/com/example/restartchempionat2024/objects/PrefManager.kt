@@ -7,9 +7,9 @@ import android.content.SharedPreferences
  * Удобно обращатся из любого класса проекта */
 object PrefManager {
 
-    lateinit var spActSystem: SharedPreferences
-    lateinit var spProfiles: SharedPreferences
-    lateinit var spOrders: SharedPreferences
+    private lateinit var spActSystem: SharedPreferences
+    private lateinit var spProfiles: SharedPreferences
+    private lateinit var spOrders: SharedPreferences
 
     //инициализировать Shared Preferences в конкретном контексте (классе активности, например)
     fun init(context: Context) {
@@ -23,20 +23,12 @@ object PrefManager {
         set(value) = spActSystem.edit().putInt("indAct", value).apply()
 
     var queueString: String
-        get() = spActSystem.getString("queue", "")!!
-        set(value) = spActSystem.edit().putString("queue", value).apply()
+        get() = spActSystem.getString("queueStr", "")!!
+        set(value) = spActSystem.edit().putString("queueStr", value).apply()
 
     var queueIsCreate: Boolean
-        get() = spActSystem.getBoolean("queue", false)
-        set(value) = spActSystem.edit().putBoolean("queue", value).apply()
-
-    /*var email: String
-        get() = spProfiles.getString("email", "")!!
-        set(value) = spProfiles.edit().putString("email", value).apply()
-
-    var password: String
-        get() = spProfiles.getString("password", "")!!
-        set(value) = spProfiles.edit().putString("password", value).apply()*/
+        get() = spActSystem.getBoolean("queueBool", false)
+        set(value) = spActSystem.edit().putBoolean("queueBool", value).apply()
 
     var isLightTheme: Boolean
         get() = spProfiles.getBoolean("password", true)
