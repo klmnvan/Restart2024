@@ -37,10 +37,10 @@ class WorkForQueue {
         return queue.size
     }
 
-    /** Возвращает заголовки(ок) кнопок(и), которые(ый) доступны(ен) в зависимости от количества элементов в очереди */
+    /** Возвращает заголовок кнопки, которая доступна в зависимости от количества элементов в очереди */
     fun getTittleBtn(): String {
         return if(queue.size != 0){
-            "Next and Skip"
+            "Next"
         } else {
             "Sign Up"
         }
@@ -60,8 +60,5 @@ class WorkForQueue {
     fun clearQueue() {
         queue.clear()
     }
-
-
-
 
 }
