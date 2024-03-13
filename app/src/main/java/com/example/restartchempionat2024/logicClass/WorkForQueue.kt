@@ -49,7 +49,7 @@ class WorkForQueue {
     /** Возвращает название активности, на которую будет совершен переход при нажатии на кнопку */
     /** Вернёт null, если перехода не будет */
     fun pressBtn(): String? {
-        return if (queue.size > 0){
+        return if (queue.size == 0){
             "Holder"
         } else {
             null
