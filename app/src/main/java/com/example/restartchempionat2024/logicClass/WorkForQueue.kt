@@ -26,6 +26,7 @@ class WorkForQueue {
             )
         )
     )
+    private var sizeQueue = queue.size
 
     /** Извлекается 1 элемент из очереди */
     fun exstractElement(): OnBoardModel? {
@@ -34,12 +35,12 @@ class WorkForQueue {
 
     /** Возвращает размер очереди */
     fun getSizeQueue(): Int {
-        return queue.size
+        return sizeQueue
     }
 
     /** Возвращает заголовок кнопки, которая доступна в зависимости от количества элементов в очереди */
     fun getTittleBtn(): String {
-        return if(queue.size != 0){
+        return if(sizeQueue != 0){
             "Next"
         } else {
             "Sign Up"
@@ -49,7 +50,7 @@ class WorkForQueue {
     /** Возвращает название активности, на которую будет совершен переход при нажатии на кнопку */
     /** Вернёт null, если перехода не будет */
     fun pressBtn(): String? {
-        return if (queue.size == 0){
+        return if (sizeQueue == 0){
             "Holder"
         } else {
             null

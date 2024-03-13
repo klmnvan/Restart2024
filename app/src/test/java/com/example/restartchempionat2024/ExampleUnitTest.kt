@@ -12,25 +12,29 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    //GREEN - все тесты работают (результат Succes)
+    //REFACTOR - изменяем 3 теста, что-то улучшаем (можно заранее написать неупрощенно)
 
     /** Тестирование правильного извлечения элемента из очереди */
     @Test
     fun exstarct_isCorrect() {
         val queue = WorkForQueue()
-        assertEquals(queue.exstractElement(), OnBoardModel(
+        val expectedElement = OnBoardModel(
             R.drawable.image_onboard1,
             "Quick Delivery At Your Doorstep",
             "Enjoy quick pick-up and delivery to your destination"
-        ))
+        )
+        val actualElement = queue.exstractElement()
+        assertEquals(actualElement, expectedElement)
     }
 
     /** Тестирование правильного изменения размера очереди */
     @Test
     fun sizeQueue_isCorrect() {
         val queue = WorkForQueue()
-        queue.exstractElement()
-        assertEquals(queue.getSizeQueue(), 2)
+        queue.exstractElement() //извлекли элемент из очереди, размер которой изначально равен 3
+        val actualSize = queue.getSizeQueue() //получили размер очереди после извлечения
+        val correctSize = 2
+        assertEquals(correctSize, actualSize)
     }
 
     /** Тестирование правильной установки надписей на кнопки, в случае, когда очередь не пуста */
@@ -38,17 +42,19 @@ class ExampleUnitTest {
     fun btnTittle_isCorrect_queueIsNotEmpty() {
         val queue = WorkForQueue()
         queue.exstractElement()
-        assertEquals("Next", queue.getTittleBtn())
+        val actualTittleBtn = queue.getTittleBtn()
+        val correctTittleBtn = "Next"
+        assertEquals(correctTittleBtn, actualTittleBtn)
     }
 
     /** Тестирование правильной установки надписи на кнопку, в случае, когда очередь пуста */
     @Test
     fun btnTittle_isCorrect_queueIsEmpty() {
         val queue = WorkForQueue()
-        queue.exstractElement()
-        queue.exstractElement()
-        queue.exstractElement()
-        assertEquals("Sign Up", queue.getTittleBtn())
+        queue.clearQueue()
+        val actualTittleBtn = queue.getTittleBtn()
+        val correctTittleBtn = "Sign Up"
+        assertEquals(correctTittleBtn, actualTittleBtn)
     }
 
     /** Тестирование правильного перехода на другую активность или его отсутствие, при
@@ -57,7 +63,9 @@ class ExampleUnitTest {
     fun transitionActivity_isCorrect_queueIsNotEmpty() {
         val queue = WorkForQueue()
         queue.exstractElement()
-        assertEquals(null, queue.pressBtn())
+        val actualTransition = queue.pressBtn()
+        val correctTransition = null
+        assertEquals(correctTransition, actualTransition)
     }
 
     /** Тестирование правильного перехода на другую активность или его отсутствие, при
@@ -65,10 +73,10 @@ class ExampleUnitTest {
     @Test
     fun transitionActivity_isCorrect_queueIsEmpty() {
         val queue = WorkForQueue()
-        queue.exstractElement()
-        queue.exstractElement()
-        queue.exstractElement()
-        assertEquals("Holder", queue.pressBtn())
+        queue.clearQueue()
+        val actualTransition = queue.pressBtn()
+        val correctTransition = "Holder"
+        assertEquals(actualTransition, correctTransition)
     }
 
 }
