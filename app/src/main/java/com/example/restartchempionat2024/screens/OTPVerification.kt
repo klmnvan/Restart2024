@@ -1,13 +1,8 @@
 package com.example.restartchempionat2024.screens
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.restartchempionat2024.R
-import com.example.restartchempionat2024.databinding.ActivityLogInBinding
-import com.example.restartchempionat2024.databinding.ActivityOnBoardBinding
 import com.example.restartchempionat2024.databinding.ActivityOtpverificationBinding
 
 class OTPVerification : AppCompatActivity() {
@@ -17,7 +12,23 @@ class OTPVerification : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityOtpverificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        pressingButton()
+    }
 
+    /** Функция, где обрабатываются нажатия на кнопки */
+    private fun pressingButton() {
+        with(binding) {
+            btnResend.setOnClickListener {
+
+            }
+            btnResetPass.setOnClickListener {
+                startActivity(Intent(this@OTPVerification, NewPassword::class.java))
+                finish()
+            }
+            btnVerify.setOnClickListener {
+
+            }
+        }
     }
 
 }

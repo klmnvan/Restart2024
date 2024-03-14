@@ -176,7 +176,7 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/bOpenPfr"
+                android:id="@+id/bOpenPdf"
                 style="@style/TextSmallBlue14"
                 android:layout_width="0dp"
                 android:layout_weight="1"
