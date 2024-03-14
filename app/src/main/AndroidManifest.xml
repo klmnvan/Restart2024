@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RestartChempionat2024"
         tools:targetApi="31">
         <activity
+            android:name=".screens.ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".screens.SignUp"
             android:exported="false" />
         <activity
