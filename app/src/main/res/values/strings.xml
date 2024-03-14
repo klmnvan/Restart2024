@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Redi express</string>
+    <string name="pdf_string">
+        <font fgcolor = "#A7A7A7">By ticking this box, you agree to our</font>
+        <font fgcolor = "#EBBC2E"> Terms and conditions and private policy</font>
+    </string>
+
 </resources>
