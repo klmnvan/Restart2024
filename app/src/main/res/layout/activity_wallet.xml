@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.Home"
+    android:background="?attr/colorOnBackground">
+
+    <!--Топ бар-->
+    <RelativeLayout
+        android:id="@+id/LLTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:elevation="2dp"
+        android:translationZ="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSecondaryContainer">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/icon_btn_back"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="20dp"/>
+        
+        <TextView
+            style="@style/TextDescriptionGray14"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:text="Wallet"/>
+        
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LLTopBar"
+        android:layout_above="@id/LLMenu"
+        android:layout_alignParentTop="true">
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--Меню-->
+    <LinearLayout
+        android:id="@+id/LLMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:translationZ="10dp"
+        android:weightSum="4"
+        android:background="?attr/colorSecondaryContainer">
+
+        <LinearLayout
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:paddingVertical="5dp"
+                android:src="@drawable/icon_home" />
+
+            <TextView
+                style="@style/TextSmallGray14"
+                android:text="Home" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnWallet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="30dp"
+                android:background="@color/blue" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:paddingVertical="5dp"
+                android:src="@drawable/icon_wallet"
+                app:tint="@color/blue" />
+
+            <TextView
+                style="@style/TextSmallGray14"
+                android:text="Wallet"
+                android:textColor="@color/blue"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnTrack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:paddingVertical="5dp"
+                android:src="@drawable/icon_track" />
+
+            <TextView
+                style="@style/TextSmallGray14"
+                android:text="Track" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:paddingVertical="5dp"
+                android:src="@drawable/icon_profile" />
+
+            <TextView
+                style="@style/TextSmallGray14"
+                android:text="Profile" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
