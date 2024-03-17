@@ -57,19 +57,19 @@ class OnBoard : AppCompatActivity(), AnimationListener {
             btnSkip.setOnClickListener {
                 PrefManager.indAct = 1
                 queue.clear()
-                startActivity(Intent(this@OnBoard, Holder::class.java))
+                startActivity(Intent(this@OnBoard, LogIn::class.java))
                 finish()
             }
             btnSignIn.setOnClickListener {
                 PrefManager.indAct = 1
                 queue.clear()
-                startActivity(Intent(this@OnBoard, Holder::class.java))
+                startActivity(Intent(this@OnBoard, LogIn::class.java))
                 finish()
             }
             btnSignUp.setOnClickListener {
                 PrefManager.indAct = 1
                 queue.clear()
-                startActivity(Intent(this@OnBoard, Holder::class.java))
+                startActivity(Intent(this@OnBoard, SignUp::class.java))
                 finish()
             }
         }

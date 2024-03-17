@@ -26,6 +26,14 @@ object PrefManager {
         get() = spActSystem.getString("queueStr", "")!!
         set(value) = spActSystem.edit().putString("queueStr", value).apply()
 
+    var password: String
+        get() = spProfiles.getString("pass", "")!!
+        set(value) = spProfiles.edit().putString("pass", value).apply()
+
+    var passwordSHA512: String
+        get() = spProfiles.getString("pass512", "")!!
+        set(value) = spProfiles.edit().putString("pass512", value).apply()
+
     var queueIsCreate: Boolean
         get() = spActSystem.getBoolean("queueBool", false)
         set(value) = spActSystem.edit().putBoolean("queueBool", value).apply()

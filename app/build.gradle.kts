@@ -62,4 +62,10 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("io.ktor:ktor-client-android:2.3.9")
 
+    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.0.4")
+    implementation("io.github.jan-tennert.supabase:compose-auth:2.0.4")
+    implementation("io.github.jan-tennert.supabase:compose-auth-ui:2.0.4")
+    implementation ("io.github.jan-tennert.supabase:realtime-kt")
+    implementation("io.github.jan-tennert.supabase:storage-kt:2.0.4")
+
 }

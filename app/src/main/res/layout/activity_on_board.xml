@@ -17,7 +17,7 @@
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
@@ -38,8 +38,8 @@
                 style="@style/TextTittleBlue24"
                 android:layout_width="match_parent"
                 android:layout_marginTop="5dp"
-                android:layout_marginHorizontal="30dp"
-                android:text="Flexible Payment"
+                android:layout_marginHorizontal="50dp"
+                android:text="Quick Delivery At Your Doorstep"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -47,7 +47,7 @@
                 style="@style/TextStandartBlack16"
                 android:layout_width="match_parent"
                 android:layout_marginTop="5dp"
-                android:layout_marginHorizontal="60dp"
+                android:layout_marginHorizontal="50dp"
                 android:text="Enjoy quick pick-up and delivery to your destination"
                 tools:ignore="HardcodedText" />
 

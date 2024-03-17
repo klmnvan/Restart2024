@@ -92,9 +92,17 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/btnResend"
+                android:id="@+id/tResend"
                 style="@style/TextSmallGray14"
                 android:text=" resend after 1:00"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/btnResend"
+                style="@style/TextSmallGray14"
+                android:visibility="gone"
+                android:text=" resend"
+                android:textColor="?attr/colorPrimary"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -108,7 +116,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="?attr/colorOnSurface"
+            android:background="@drawable/gray_5r"
             android:text="Verify Code"
             tools:ignore="HardcodedText" />
 
@@ -122,7 +130,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="?attr/colorOnSurface"
+            android:background="@drawable/gray_5r"
             android:text="Reset password"
             tools:ignore="HardcodedText" />
 

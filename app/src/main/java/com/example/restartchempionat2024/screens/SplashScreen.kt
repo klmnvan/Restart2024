@@ -22,9 +22,13 @@ class SplashScreen : ActivityCustomTheme() {
         val thread: Thread = object : Thread() {
             override fun run() {
                 try {
-                    TimeUnit.SECONDS.sleep(3)
+                    TimeUnit.SECONDS.sleep(1)
                     if (PrefManager.indAct == 0){
                         startActivity(Intent(this@SplashScreen, OnBoard::class.java))
+                        finish()
+                    }
+                    if (PrefManager.indAct == 1){
+                        startActivity(Intent(this@SplashScreen, LogIn::class.java))
                         finish()
                     }
                 } catch (e: InterruptedException) {
