@@ -32,13 +32,10 @@ class Home : ActivityCustomTheme() {
     private fun initUserData(){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                Toast.makeText(this@Home, "Получаю данные профиля", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Получаю данные профиля", Toast.LENGTH_SHORT).show()
                 UserData.profile = Requests.getProfile(PrefManager.email)
-                runOnUiThread {
-                    Toast.makeText(this@Home, "Данные получены", Toast.LENGTH_SHORT).show()
-                }
             } catch (e: Exception) {
-                Toast.makeText(this@Home, e.message.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Home, e.message.toString(), Toast.LENGTH_LONG).show()
             }
 
         }

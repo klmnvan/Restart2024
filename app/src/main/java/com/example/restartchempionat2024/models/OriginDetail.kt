@@ -6,9 +6,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class OriginDetail(
     val id: Int = 0,
-    val address: String,
+    val address: String = "",
     @SerialName("state_country")
-    val stateCountry: String,
-    val phone: String,
-    val others: String?,
+    val stateCountry: String = "",
+    val phone: String = "",
+    val others: String? = "",
 )

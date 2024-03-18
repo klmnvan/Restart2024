@@ -50,7 +50,6 @@ class Profile : ActivityCustomTheme() {
                     UserData.theme = R.style.LightMode
                     recreate()
                 }
-
             }
         }
     }

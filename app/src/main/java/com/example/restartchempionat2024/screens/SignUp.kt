@@ -10,12 +10,12 @@ import android.os.Environment
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import androidx.core.widget.addTextChangedListener
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.databinding.ActivitySignUpBinding
+import com.example.restartchempionat2024.models.Profiles
 import com.example.restartchempionat2024.objects.General.isEmailValid
 import com.example.restartchempionat2024.objects.Requests
 import com.example.restartchempionat2024.objects.UserData
@@ -24,10 +24,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.io.InputStream
-import java.io.OutputStream
+import java.sql.Timestamp
 
 class SignUp : ActivityCustomTheme() {
     private lateinit var binding: ActivitySignUpBinding
@@ -147,11 +145,12 @@ class SignUp : ActivityCustomTheme() {
                 CoroutineScope(Dispatchers.Main).launch {
                     try {
                         Toast.makeText(this@SignUp, "Идёт регистрация...", Toast.LENGTH_LONG).show()
-                        Requests.signUp(email, pass)
-                        //Получить профиль пользователя, чтобы узнать uuid
-                        UserData.profile = Requests.getProfile(email)
-                        //Вставить данные в таблицу с профилями (или что-то другое)
-                        Requests.updateProfile(name, phone, UserData.profile.id!!)
+                        val uuid = Requests.signUp(email, pass)
+                        Log.d("UUID", uuid)
+                        val newProfile = Profiles(
+                            uuid, Timestamp(System.currentTimeMillis()).toString(),
+                            name, phone, "", email, 0)
+                        Requests.upsertProfile(newProfile)
                         runOnUiThread {
                             startActivity(Intent(this@SignUp, LogIn::class.java))
                             finish()

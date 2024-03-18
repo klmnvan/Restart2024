@@ -4,9 +4,10 @@
     <style name="LightMode" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="colorPrimary">@color/blue</item>
-        <item name="colorOnSurface">@color/gray1</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/gray1</item>
+        <item name="colorSecondaryContainer">@color/white</item>
 
     </style>
 

@@ -103,7 +103,7 @@
                 </EditText>
 
                 <EditText
-                    android:id="@+id/oOthers"
+                    android:id="@+id/iOthers"
                     style="@style/TextFieldSendPack"
                     android:hint="Others">
 
@@ -180,6 +180,7 @@
                 <EditText
                     android:id="@+id/iWeight"
                     style="@style/TextFieldSendPack"
+                    android:inputType="numberDecimal"
                     android:hint="Weight of item(kg)">
 
                 </EditText>
@@ -187,6 +188,7 @@
                 <EditText
                     android:id="@+id/iWorth"
                     style="@style/TextFieldSendPack"
+                    android:inputType="numberDecimal"
                     android:hint="Worth of Items">
 
                 </EditText>

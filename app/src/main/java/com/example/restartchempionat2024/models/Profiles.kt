@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 /** data class, который содержит все поля, которые можно получить из соответствующей таблицы *** в supabse */
 @Serializable
-data class Profile (
+data class Profiles (
     var id: String? = "",
     @SerialName("updated_at")
     var updatedAt: String? = "",

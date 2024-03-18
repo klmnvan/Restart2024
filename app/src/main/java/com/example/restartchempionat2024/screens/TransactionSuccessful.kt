@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.databinding.ActivityPackageInfoBinding
 import com.example.restartchempionat2024.databinding.ActivityTtransactionSuccessfulBinding
+import com.example.restartchempionat2024.objects.UserData
 import com.example.restartchempionat2024.theme.ActivityCustomTheme
 
 class TransactionSuccessful : ActivityCustomTheme(), AnimationListener {
@@ -20,6 +21,7 @@ class TransactionSuccessful : ActivityCustomTheme(), AnimationListener {
         binding = ActivityTtransactionSuccessfulBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initAnimation()
+        binding.tTrackNum.text = UserData.lastOrder.trackingNumber
     }
 
     /** Функция, где инициализируется анимация */
@@ -33,10 +35,12 @@ class TransactionSuccessful : ActivityCustomTheme(), AnimationListener {
     private fun pressingButton() {
         with(binding) {
             btnTrack.setOnClickListener {
+                UserData.nulableLastOrder()
                 startActivity(Intent(this@TransactionSuccessful, Track::class.java))
                 finish()
             }
             btnGoBack.setOnClickListener {
+                UserData.nulableLastOrder()
                 startActivity(Intent(this@TransactionSuccessful, Home::class.java))
                 finish()
             }

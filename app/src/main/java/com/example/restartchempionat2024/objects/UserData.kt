@@ -5,7 +5,7 @@ import com.example.chempionat2024.models.OriginDetail
 import com.example.chempionat2024.models.PackageDetail
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.models.DestinationDetail
-import com.example.restartchempionat2024.models.Profile
+import com.example.restartchempionat2024.models.Profiles
 
 /** UserData -
  * хранилице данных, доступ к которым нужен из нескольких классов в проекте.
@@ -13,20 +13,19 @@ import com.example.restartchempionat2024.models.Profile
 object UserData {
 
     var theme: Int = R.style.LightMode
-    var profile: Profile = Profile()
-    var lastOrder = Order(0, "", 0, 0, "", 0, "",
-        0, true, "")
-    var lastOrigDet: OriginDetail = OriginDetail(0, "", "", "", "")
-    var lastPackDet: PackageDetail = PackageDetail(0, 0F, 0F, "")
+    var profile: Profiles = Profiles()
+    var lastOrder = Order()
+    var lastOrigDet: OriginDetail = OriginDetail()
+    var lastPackDet: PackageDetail = PackageDetail()
     var lastDestDet: MutableList<DestinationDetail> = ArrayList()
+    var lastDestDetIsNotEmpty = false
 
     fun nulableLastOrder(){
-        lastOrder = Order(0, "", 0, 0, "",
-            0, "", 0, true, "")
-        lastOrigDet = OriginDetail(0, "", "", "", "")
-        lastPackDet = PackageDetail(0, 0F, 0F, "")
+        lastOrder = Order()
+        lastOrigDet = OriginDetail()
+        lastPackDet = PackageDetail()
         lastDestDet = ArrayList()
+        lastDestDetIsNotEmpty = false
     }
-
 
 }

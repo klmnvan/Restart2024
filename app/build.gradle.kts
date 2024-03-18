@@ -51,22 +51,27 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //будет пределагать преобразовать в версию, как у бибилотек выше, не работает, не трогай
-    //noinspection UseTomlInstead
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    //для supabase
-    //noinspection UseTomlInstead
-    implementation(platform("io.github.jan-tennert.supabase:bom:2.0.4"))
-    //noinspection UseTomlInstead
-    implementation("io.github.jan-tennert.supabase:postgrest-kt")
-    //noinspection UseTomlInstead
-    implementation("io.ktor:ktor-client-android:2.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialisation-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
+    //в supabase docs есть
+    implementation(platform("io.github.jan-tennert.supabase:bom:2.0.4"))
+
+    //в supabase docs есть
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.github.jan-tennert.supabase:realtime-kt")
+    implementation("io.github.jan-tennert.supabase:storage-kt:2.0.4")
     implementation("io.github.jan-tennert.supabase:gotrue-kt:2.0.4")
+
     implementation("io.github.jan-tennert.supabase:compose-auth:2.0.4")
     implementation("io.github.jan-tennert.supabase:compose-auth-ui:2.0.4")
-    implementation ("io.github.jan-tennert.supabase:realtime-kt")
-    implementation("io.github.jan-tennert.supabase:storage-kt:2.0.4")
+
+    //в supabase docs есть
+    implementation("io.ktor:ktor-client-android:2.3.9")
+    
+    implementation("com.yandex.android:maps.mobile:4.5.1-lite")
+
 
 
 

@@ -7,19 +7,19 @@ import kotlinx.serialization.Serializable
 data class Order(
     var id: Int = 0,
     @SerialName("profile_id")
-    val profileId: String,
+    val profileId: String = "",
     @SerialName("origin_id")
-    val originId: Int,
+    val originId: Int = 0,
     @SerialName("package_id")
-    val packageId: Int,
+    val packageId: Int = 0,
     @SerialName("tracking_number")
-    val trackingNumber: String,
-    val status: Int,
-    val review: String,
+    val trackingNumber: String = "",
+    val status: Int = 0,
+    val review: String = "",
     @SerialName("delivery_estimate")
-    val deliveryEstimate: Int,
+    val deliveryEstimate: Int = 0,
     @SerialName("is_active")
-    val isActive: Boolean,
+    val isActive: Boolean = true,
     @SerialName("created_at")
-    val createdAt: String,
+    val createdAt: String = "",
 )
