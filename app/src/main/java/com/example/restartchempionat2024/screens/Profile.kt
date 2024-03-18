@@ -76,6 +76,10 @@ class Profile : ActivityCustomTheme() {
                 startActivity(Intent(this@Profile, AddPaymentMethod::class.java))
                 finish()
             }
+            btnReport.setOnClickListener {
+                startActivity(Intent(this@Profile, SendAPackage::class.java))
+                finish()
+            }
         }
     }
 

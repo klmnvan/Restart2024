@@ -111,56 +111,54 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/LLDestDetTitl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_below="@id/LLOrDet"
-                android:layout_marginTop="30dp"
-                android:layout_marginHorizontal="20dp">
-
-                <ImageView
-                    style="@style/ImgPack"
-                    android:src="@drawable/icon_pack2"/>
-
-                <TextView
-                    style="@style/TextStandartBlack16"
-                    android:textStyle="bold"
-                    android:layout_marginStart="5dp"
-                    android:textSize="16sp"
-                    android:text="Destination Details"/>
-
-            </LinearLayout>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listDestDetView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/LLDestDetTitl"
+                android:nestedScrollingEnabled="false"
+                android:layout_below="@id/LLOrDet"
                 android:orientation="vertical"
-                tools:listitem=""
+                tools:listitem="@layout/item_dest_det"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+            <LinearLayout
+                android:id="@+id/btnAddDest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/listDestDetView"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="20dp">
+
+                <ImageView
+                    style="@style/ImgPack"
+                    android:src="@drawable/icon_pack3"/>
+
+                <TextView
+                    style="@style/TextDescriptionGray14"
+                    android:textStyle="normal"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16sp"
+                    android:text="Add destination"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/LLPackDetTitl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@id/listDestDetView"
-                android:layout_marginTop="30dp"
+                android:layout_below="@id/btnAddDest"
+                android:layout_marginTop="20dp"
                 android:layout_marginHorizontal="20dp">
-
-                <ImageView
-                    style="@style/ImgPack"
-                    android:src="@drawable/icon_pack1"/>
 
                 <TextView
                     style="@style/TextStandartBlack16"
                     android:textStyle="bold"
                     android:layout_marginStart="5dp"
                     android:textSize="16sp"
-                    android:text="Origin Details"/>
+                    android:text="Package Details"/>
 
             </LinearLayout>
 
