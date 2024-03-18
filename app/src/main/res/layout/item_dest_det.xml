@@ -3,64 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/LLDestDetTitl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginHorizontal="20dp">
 
-        <ImageView
-            style="@style/ImgPack"
-            android:src="@drawable/icon_pack2"/>
-
-        <TextView
-            style="@style/TextStandartBlack16"
-            android:textStyle="bold"
-            android:layout_marginStart="5dp"
-            android:textSize="16sp"
-            android:text="Destination Details"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LLOrDet"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/LLDestDetTitl"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/iAddress"
-            style="@style/TextFieldSendPack"
-            android:hint="Address">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/iCountry"
-            style="@style/TextFieldSendPack"
-            android:hint="State,Country">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/iPhone"
-            style="@style/TextFieldSendPack"
-            android:hint="Phone number">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/iOthers"
-            style="@style/TextFieldSendPack"
-            android:hint="Others">
-
-        </EditText>
-
-    </LinearLayout>
 
 </RelativeLayout>
