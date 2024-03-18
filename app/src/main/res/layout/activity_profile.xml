@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.Profile">
+    tools:context=".screens.Profile"
+    android:background="?attr/colorOnBackground">
 
     <!--Топ бар-->
     <RelativeLayout
@@ -44,9 +45,358 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/LLTopBar"
-        android:layout_above="@id/LLMenu"
-        android:layout_alignParentTop="true">
+        android:layout_above="@id/LLMenu">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/LLAvatar"
+                android:layout_marginVertical="30dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:strokeColor="?attr/colorOnSurface"
+                    app:strokeWidth="1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gray_oval"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tHello"
+                        android:textStyle="bold"
+                        style="@style/TextStandartBlack16"
+                        android:text="Hello"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextStandartBlack16"
+                            android:textSize="14sp"
+                            android:text="Current balance: "/>
+
+                        <TextView
+                            android:id="@+id/tBalance"
+                            style="@style/TextStandartBlack16"
+                            android:textSize="14sp"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold"
+                            android:text="N10,712:00"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btnBalance"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:padding="20dp"
+                    android:background="@drawable/icon_close_eye"
+                    android:backgroundTint="?attr/colorOnPrimary"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/LLAvatar"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStandartBlack16"
+                    android:textSize="18dp"
+                    android:text="Enable dark Mode"/>
+
+                <Switch
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:thumb="@drawable/custom_thumb"
+                    android:track="@drawable/custom_track"
+                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEdit"
+                style="@style/ContainerProfile"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/LLTheme"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_profile" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Edit Profile"
+                        android:textColor="?attr/colorOnPrimary"/>
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:textSize="12dp"
+                        android:text="Name, phone no, address, email ..."/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnReport"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnEdit"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_rep" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Statements &amp; Reports"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:text="Download transaction details, orders, deliveries"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNotif"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnReport"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_notif" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Notification Settings"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:text="mute, unmute, set location &amp; tracking setting"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnCard"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnNotif"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_wallet" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Card &amp; Bank account settings"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:text="change cards, delete card details"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnRef"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnCard"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_ref" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Referrals"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:text="check no of friends and earn"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAbout"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnRef"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_map" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="About Us"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/TextSmallGray14"
+                        android:textSize="12dp"
+                        android:text="Name, phone no, address, email ..."/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnLogOut"
+                style="@style/ContainerProfile"
+                android:layout_below="@id/btnAbout"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
+
+                <ImageView
+                    style="@style/ImgProfile"
+                    app:srcCompat="@drawable/icon_log_out"
+                    app:tint="@color/red" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextDescriptionGray14"
+                        android:text="Log Out"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@drawable/icon_arrow" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
 

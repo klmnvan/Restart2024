@@ -68,4 +68,6 @@ dependencies {
     implementation ("io.github.jan-tennert.supabase:realtime-kt")
     implementation("io.github.jan-tennert.supabase:storage-kt:2.0.4")
 
+
+
 }

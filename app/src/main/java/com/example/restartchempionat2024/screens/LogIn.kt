@@ -89,7 +89,8 @@ class LogIn : AppCompatActivity() {
                         runOnUiThread {
                             if(checkbox.isChecked) PrefManager.password = password
                             PrefManager.passwordSHA512 = getSHA512(password)
-                            startActivity(Intent(this@LogIn, Holder::class.java))
+                            PrefManager.indAct = 2
+                            startActivity(Intent(this@LogIn, Home::class.java))
                             finish()
                         }
                     } catch (e: Exception) {

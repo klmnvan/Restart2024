@@ -31,6 +31,10 @@ class SplashScreen : ActivityCustomTheme() {
                         startActivity(Intent(this@SplashScreen, LogIn::class.java))
                         finish()
                     }
+                    if (PrefManager.indAct == 2){
+                        startActivity(Intent(this@SplashScreen, Home::class.java))
+                        finish()
+                    }
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 }

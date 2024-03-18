@@ -1,5 +1,6 @@
 package com.example.restartchempionat2024.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,5 +18,24 @@ class Track : ActivityCustomTheme() {
         super.onCreate(savedInstanceState)
         binding = ActivityTrackBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        pressingButton()
+    }
+
+    /** Функция, где обрабатываются нажатия на кнопки */
+    private fun pressingButton() {
+        with(binding) {
+            btnProfile.setOnClickListener {
+                startActivity(Intent(this@Track, Profile::class.java))
+                finish()
+            }
+            btnWallet.setOnClickListener {
+                startActivity(Intent(this@Track, Wallet::class.java))
+                finish()
+            }
+            btnHome.setOnClickListener {
+                startActivity(Intent(this@Track, Home::class.java))
+                finish()
+            }
+        }
     }
 }
