@@ -7,16 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.restartchempionat2024.R
-import com.example.restartchempionat2024.databinding.ActivityHomeBinding
-import com.example.restartchempionat2024.databinding.ActivityNotificationBinding
+import com.example.restartchempionat2024.databinding.ActivityAddPaymentMethodBinding
+import com.example.restartchempionat2024.databinding.ActivitySendApackageBinding
 import com.example.restartchempionat2024.theme.ActivityCustomTheme
 
-class Notification : ActivityCustomTheme() {
-    lateinit var binding: ActivityNotificationBinding
+class SendAPackage : ActivityCustomTheme() {
+    lateinit var binding: ActivitySendApackageBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNotificationBinding.inflate(layoutInflater)
+        binding = ActivitySendApackageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         pressingButton()
     }
@@ -25,7 +25,7 @@ class Notification : ActivityCustomTheme() {
     private fun pressingButton() {
         with(binding) {
             btnBack.setOnClickListener {
-                startActivity(Intent(this@Notification, Profile::class.java))
+                startActivity(Intent(this@SendAPackage, Profile::class.java))
                 finish()
             }
         }

@@ -7,6 +7,7 @@
         <item name="colorOnSurface">@color/gray1</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/dark_background</item>
+        <item name="colorSecondaryContainer">@color/container_dark_theme</item>
 
     </style>
 

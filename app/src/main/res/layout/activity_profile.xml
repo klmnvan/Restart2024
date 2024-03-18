@@ -133,9 +133,11 @@
                 <TextView
                     style="@style/TextStandartBlack16"
                     android:textSize="18dp"
+                    android:textStyle="bold"
                     android:text="Enable dark Mode"/>
 
                 <Switch
+                    android:id="@+id/switch1"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -179,7 +181,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -215,7 +218,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -251,7 +255,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -287,7 +292,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -323,7 +329,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -359,7 +366,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -392,7 +400,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@drawable/icon_arrow" />
+                    app:srcCompat="@drawable/icon_arrow"
+                    app:tint="?attr/colorOnPrimary"/>
 
             </LinearLayout>
 

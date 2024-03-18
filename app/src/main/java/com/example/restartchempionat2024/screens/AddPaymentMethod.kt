@@ -9,8 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.databinding.ActivityAddPaymentMethodBinding
 import com.example.restartchempionat2024.databinding.ActivityHomeBinding
+import com.example.restartchempionat2024.theme.ActivityCustomTheme
 
-class AddPaymentMethod : AppCompatActivity() {
+class AddPaymentMethod : ActivityCustomTheme() {
     lateinit var binding: ActivityAddPaymentMethodBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
