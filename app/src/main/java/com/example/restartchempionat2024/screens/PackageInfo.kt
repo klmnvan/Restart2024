@@ -8,8 +8,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.databinding.ActivityPackageInfoBinding
+import com.example.restartchempionat2024.theme.ActivityCustomTheme
 
-class PackageInfo : AppCompatActivity() {
+class PackageInfo : ActivityCustomTheme() {
     lateinit var binding: ActivityPackageInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
