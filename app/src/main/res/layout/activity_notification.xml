@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.Home"
+    android:background="?attr/colorOnBackground">
+
+    <!--Топ бар-->
+    <RelativeLayout
+        android:id="@+id/LLTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:elevation="2dp"
+        android:translationZ="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSecondaryContainer">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/icon_btn_back"
+            android:visibility="visible"
+            android:layout_marginHorizontal="20dp"/>
+
+        <TextView
+            style="@style/TextDescriptionGray14"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:text="Notification"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_below="@id/LLTopBar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icon_notif"
+        tools:layout_editor_absoluteY="0dp"
+        app:tint="?attr/colorOnSurface" />
+
+    <TextView
+        style="@style/TextStandartBlack16"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_below="@id/imageView"
+        android:text="You have no notifications"/>
+
+
+</RelativeLayout>
