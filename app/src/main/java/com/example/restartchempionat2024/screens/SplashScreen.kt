@@ -32,7 +32,7 @@ class SplashScreen : ActivityCustomTheme() {
                         finish()
                     }
                     if (PrefManager.indAct == 2){
-                        startActivity(Intent(this@SplashScreen, TransactionSuccessful::class.java))
+                        startActivity(Intent(this@SplashScreen, Home::class.java))
                         finish()
                     }
                 } catch (e: InterruptedException) {

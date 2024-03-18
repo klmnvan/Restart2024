@@ -1,17 +1,19 @@
 package com.example.restartchempionat2024.screens
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.widget.Toast
 import com.example.restartchempionat2024.R
-import com.example.restartchempionat2024.databinding.ActivityHomeBinding
 import com.example.restartchempionat2024.databinding.ActivityProfileBinding
+import com.example.restartchempionat2024.objects.General
 import com.example.restartchempionat2024.objects.PrefManager
+import com.example.restartchempionat2024.objects.Requests
 import com.example.restartchempionat2024.objects.UserData
 import com.example.restartchempionat2024.theme.ActivityCustomTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Profile : ActivityCustomTheme() {
     lateinit var binding: ActivityProfileBinding
@@ -22,6 +24,17 @@ class Profile : ActivityCustomTheme() {
         setContentView(binding.root)
         pressingButton()
         initSwitch()
+        initUserData()
+    }
+
+    /** Функция, где подставляются значения баланса, фотографии и имени */
+    @SuppressLint("SetTextI18n")
+    private fun  initUserData() {
+        with(binding){
+            tBalance.text = General.getBalance(UserData.profile.currentBalance.toString())
+            tHello.text = "Hello ${UserData.profile.name}"
+            //фото
+        }
     }
 
     /** Функция, где переключается тема */
@@ -78,6 +91,27 @@ class Profile : ActivityCustomTheme() {
             }
             btnReport.setOnClickListener {
                 startActivity(Intent(this@Profile, SendAPackage::class.java))
+                finish()
+            }
+            btnBalance.setOnClickListener {
+                PrefManager.balanceIsOpen = !PrefManager.balanceIsOpen
+                initUserData()
+            }
+            btnLogOut.setOnClickListener {
+                CoroutineScope(Dispatchers.Main).launch {
+                    with(binding){
+                        try {
+                            Toast.makeText(this@Profile, "Выхожу из системы", Toast.LENGTH_SHORT).show()
+                            Requests.logOut()
+                            runOnUiThread {
+                                Toast.makeText(this@Profile, "Успешный выход", Toast.LENGTH_SHORT).show()
+                            }
+                        } catch (e: Exception){
+                            Toast.makeText(this@Profile, e.message.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+                startActivity(Intent(this@Profile, LogIn::class.java))
                 finish()
             }
         }

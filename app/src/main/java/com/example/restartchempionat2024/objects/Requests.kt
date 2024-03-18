@@ -67,6 +67,11 @@ object Requests {
         )
     }
 
+    /** В функции просиходит отправка запроса на выход из аккаунта */
+    suspend fun logOut() {
+        supabase.auth.signOut()
+    }
+
     /** В функции просиходит отправка запроса на сброс пароля */
     suspend fun resetPassword (emailUser: String){
         supabase.auth.resetPasswordForEmail(emailUser)

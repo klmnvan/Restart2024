@@ -88,6 +88,7 @@ class LogIn : AppCompatActivity() {
                         Requests.signIn(email, password)
                         runOnUiThread {
                             if(checkbox.isChecked) PrefManager.password = password
+                            PrefManager.email = email
                             PrefManager.passwordSHA512 = getSHA512(password)
                             PrefManager.indAct = 2
                             startActivity(Intent(this@LogIn, Home::class.java))

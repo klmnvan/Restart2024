@@ -30,6 +30,10 @@ object PrefManager {
         get() = spProfiles.getString("pass", "")!!
         set(value) = spProfiles.edit().putString("pass", value).apply()
 
+    var email: String
+        get() = spProfiles.getString("email", "")!!
+        set(value) = spProfiles.edit().putString("email", value).apply()
+
     var passwordSHA512: String
         get() = spProfiles.getString("pass512", "")!!
         set(value) = spProfiles.edit().putString("pass512", value).apply()
@@ -41,5 +45,9 @@ object PrefManager {
     var isLightTheme: Boolean
         get() = spProfiles.getBoolean("password", true)
         set(value) = spProfiles.edit().putBoolean("password", value).apply()
+
+    var balanceIsOpen: Boolean
+        get() = spProfiles.getBoolean("balance", false)
+        set(value) = spProfiles.edit().putBoolean("balance", value).apply()
 
 }

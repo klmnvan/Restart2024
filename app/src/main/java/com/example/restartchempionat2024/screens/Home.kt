@@ -2,13 +2,20 @@ package com.example.restartchempionat2024.screens
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.restartchempionat2024.R
 import com.example.restartchempionat2024.databinding.ActivityHomeBinding
+import com.example.restartchempionat2024.objects.PrefManager
+import com.example.restartchempionat2024.objects.Requests
+import com.example.restartchempionat2024.objects.UserData
 import com.example.restartchempionat2024.theme.ActivityCustomTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Home : ActivityCustomTheme() {
     lateinit var binding: ActivityHomeBinding
@@ -18,6 +25,23 @@ class Home : ActivityCustomTheme() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         pressingButton()
+        initUserData()
+    }
+
+    /** Функция, где осуществляется запрос на сервер, получаются баланс, фото и имя профиля */
+    private fun initUserData(){
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                Toast.makeText(this@Home, "Получаю данные профиля", Toast.LENGTH_SHORT).show()
+                UserData.profile = Requests.getProfile(PrefManager.email)
+                runOnUiThread {
+                    Toast.makeText(this@Home, "Данные получены", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@Home, e.message.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+        }
     }
 
     /** Функция, где обрабатываются нажатия на кнопки */
