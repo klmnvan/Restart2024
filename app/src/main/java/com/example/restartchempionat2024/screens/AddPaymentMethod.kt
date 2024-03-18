@@ -7,15 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.restartchempionat2024.R
+import com.example.restartchempionat2024.databinding.ActivityAddPaymentMethodBinding
 import com.example.restartchempionat2024.databinding.ActivityHomeBinding
-import com.example.restartchempionat2024.databinding.ActivityNotificationBinding
 
-class Notification : AppCompatActivity() {
-    lateinit var binding: ActivityNotificationBinding
+class AddPaymentMethod : AppCompatActivity() {
+    lateinit var binding: ActivityAddPaymentMethodBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNotificationBinding.inflate(layoutInflater)
+        binding = ActivityAddPaymentMethodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         pressingButton()
     }
@@ -24,7 +24,7 @@ class Notification : AppCompatActivity() {
     private fun pressingButton() {
         with(binding) {
             btnBack.setOnClickListener {
-                startActivity(Intent(this@Notification, Profile::class.java))
+                startActivity(Intent(this@AddPaymentMethod, Profile::class.java))
                 finish()
             }
         }
