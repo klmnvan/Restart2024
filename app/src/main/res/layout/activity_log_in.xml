@@ -50,6 +50,7 @@
             android:id="@+id/inptEmail"
             style="@style/TextFieldStandart"
             android:layout_marginTop="5dp"
+            android:inputType="textImeMultiLine"
             android:hint="***********@mail.com"
             android:layout_below="@id/tHintEmail"
             android:layout_alignParentStart="true"
