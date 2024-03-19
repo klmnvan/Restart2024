@@ -33,5 +33,17 @@ class SplashScreen : ActivityCustomTheme() {
             }
         }
         thread.start()
+
+        /*val thread1 = object : Thread(){
+            override fun run() {
+                try {
+                    TimeUnit.SECONDS.sleep(3)
+
+                } catch (e: Exception) {
+
+                }
+            }
+        }
+        thread1.start()*/
     }
 }
