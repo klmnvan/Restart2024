@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.OnBoard1"
+    android:background="?attr/colorOnBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="30dp"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        tools:ignore="UselessLeaf">
+
+        <ImageView
+            android:id="@+id/qImage"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:background="@drawable/image_onboard1"/>
+
+        <LinearLayout
+            android:id="@+id/LLtittles"
+            android:layout_below="@id/qImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="130dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/qTittle"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="50dp"
+                style="@style/TextTittleBlue24"
+                android:text="Quick Delivery At Your Doorstep"/>
+
+            <TextView
+                android:id="@+id/qDescription"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="50dp"
+                style="@style/TextStandartBlack16"
+                android:text="Enjoy quick pick-up and delivery to your destination"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LLPoints"
+            android:layout_below="@id/LLtittles"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/p1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/oval_blue"/>
+
+            <View
+                android:id="@+id/p2"
+                android:layout_marginStart="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/oval_blue_corners"/>
+
+            <View
+                android:id="@+id/p3"
+                android:layout_marginStart="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/oval_blue_corners"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLBtns"
+            android:layout_below="@id/LLPoints"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btnSkip"
+                style="@style/BtnBlue"
+                android:text="Skip"/>
+
+            <TextView
+                android:id="@+id/btnNext"
+                style="@style/BtnBlue"
+                android:layout_alignParentEnd="true"
+                android:text="Next"/>
+
+            <TextView
+                android:id="@+id/btnSignUp"
+                style="@style/BtnBlue"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:text="Sign Up"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LLHints"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RLBtns"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextSmallGray14"
+                android:text="Already have an account?  "/>
+
+            <TextView
+                style="@style/TextSmallBlue14"
+                android:textStyle="bold"
+                android:text="Sign in"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

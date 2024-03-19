@@ -24,7 +24,7 @@ class SplashScreen : ActivityCustomTheme() {
                 try {
                     TimeUnit.SECONDS.sleep(3)
                     if (PrefManager.indAct == 0){
-                        startActivity(Intent(this@SplashScreen, OnBoard::class.java))
+                        startActivity(Intent(this@SplashScreen, OnBoard1::class.java))
                         finish()
                     }
                 } catch (e: InterruptedException) {
